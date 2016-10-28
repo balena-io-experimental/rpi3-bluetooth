@@ -26,7 +26,7 @@ WORKDIR usr/src/app
 COPY . ./
 
 # enable systemd init system in the container
-ENV INITSYSTEM=on
+ENV INITSYSTEM on
 
 # scan.sh will run when the container starts up on the device
 CMD ["bash", "scan.sh"]
