@@ -3,21 +3,11 @@
 # and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
 FROM resin/%%RESIN_MACHINE_NAME%%-python
 
-# use apt-get if you need to install dependencies
-RUN apt-get update
-RUN apt-get install wget
-
-# add the key for foundation repository
-RUN wget http://archive.raspberrypi.org/debian/raspberrypi.gpg.key -O - | sudo apt-key add -
-
-# add apt source of the foundation repository
-# we need this source because bluez needs to be patched in order to work with RPi3
-# issue #1314: How to get BT working on Pi3B. by clivem in raspberrypi/linux on GitHub
-RUN sed -i '1s#^#deb http://archive.raspberrypi.org/debian jessie main\n#' /etc/apt/sources.list
-RUN apt-get update
-
 # install required packages
-RUN apt-get install bluez bluez-firmware
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    bluez \
+    bluez-firmware && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # define our working directory in the container
 WORKDIR usr/src/app
