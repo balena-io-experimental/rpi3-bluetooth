@@ -1,13 +1,11 @@
-# base-image for python on any machine using a template variable,
 # see more about dockerfile templates here: http://docs.resin.io/deployment/docker-templates/
 # and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
-FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM resin/%%RESIN_MACHINE_NAME%%-debian
 
 # install required packages
 RUN apt-get update && apt-get install -yq --no-install-recommends \
     bluez \
-    bluez-firmware && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # define our working directory in the container
 WORKDIR usr/src/app
