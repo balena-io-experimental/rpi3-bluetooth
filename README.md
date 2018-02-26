@@ -1,8 +1,13 @@
 # rpi3-bluetooth
+
+:warning: **This project is not necessary. Starting from resinOS 2.9.3+rev1, bluetooth devices are controlled by the host operating system and available for all
+user containers. Just install the software tools that you require to talk to the bluetooth devices, and start using it.** :warning:
+
+**The below notes are kept for reference.**
+
 Raspberry Pi 3 on-board Bluetooth example
 
-This project enables bluetooth and demonstrates some simple commands to interract
-with a bluetooth device.
+This project enables bluetooth and demonstrates some simple commands to interact with a bluetooth device.
 
 To get this project up and running, you will need to signup for a [resin.io](https://resin.io/) account [here](https://dashboard.resin.io/signup) and set up a Raspberry Pi 3, have a look at our [Getting Started Tutorial](http://docs.resin.io/raspberrypi/nodejs/getting-started/) if you haven't already. Once you are set up with resin.io, you will need to clone this repo locally:
 
