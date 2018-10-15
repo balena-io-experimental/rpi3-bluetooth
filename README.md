@@ -1,6 +1,6 @@
 # rpi3-bluetooth
 
-:warning: **This project is not necessary. Starting from resinOS 2.9.3+rev1, bluetooth devices are controlled by the host operating system and available for all
+:warning: **This project is not necessary. Starting from balenaOS 2.9.3+rev1, bluetooth devices are controlled by the host operating system and available for all
 user containers. Just install the software tools that you require to talk to the bluetooth devices, and start using it.** :warning:
 
 **The below notes are kept for reference.**
@@ -9,20 +9,20 @@ Raspberry Pi 3 on-board Bluetooth example
 
 This project enables bluetooth and demonstrates some simple commands to interact with a bluetooth device.
 
-To get this project up and running, you will need to signup for a [resin.io](https://resin.io/) account [here](https://dashboard.resin.io/signup) and set up a Raspberry Pi 3, have a look at our [Getting Started Tutorial](http://docs.resin.io/raspberrypi/nodejs/getting-started/) if you haven't already. Once you are set up with resin.io, you will need to clone this repo locally:
+To get this project up and running, you will need to signup for a [balena](https://balena.io/) account [here](https://dashboard.balena.io/signup) and set up a Raspberry Pi 3, have a look at our [Getting Started Tutorial](http://docs.balena.io/raspberrypi/nodejs/getting-started/) if you haven't already. Once you are set up with balena, you will need to clone this repo locally:
 
 ```
-$ git clone https://github.com/resin-io-projects/rpi3-bluetooth.git
+$ git clone https://github.com/balena-projects/rpi3-bluetooth.git
 ```
-Then add your resin.io application's remote repository to your local repository:
+Then add your balena application's remote repository to your local repository:
 
 ```
-$ git remote add resin username@git.resin.io:username/myapp.git
+$ git remote add balena username@git.balena.io:username/myapp.git
 ```
 and push the code to the newly added remote:
 
 ```
-$ git push resin master
+$ git push balena master
 ```
 It should take a few minutes for the code to push. Once the code has pushed the `scan.sh` script will enable the on-board Bluetooth, you should see this in your logs:
 
@@ -37,11 +37,11 @@ LE Scan ...
 18:B4:30:51:4C:E5 (unknown)
 66:53:B2:89:24:D3 (unknown)
 66:53:B2:89:24:D3 (unknown)
-EE:50:F0:F8:3C:FF resin
+EE:50:F0:F8:3C:FF balena
 EE:50:F0:F8:3C:FF (unknown)
 18:B4:30:51:4C:E5 Nest Cam
 ```
-the output shows 6 devices found, we are going to connect to the `EE:50:F0:F8:3C:FF resin` device:
+the output shows 6 devices found, we are going to connect to the `EE:50:F0:F8:3C:FF balena` device:
 ```
 $ gatttool -b EE:50:F0:F8:3C:FF -t random -I
 [EE:50:F0:F8:3C:FF][LE]>
