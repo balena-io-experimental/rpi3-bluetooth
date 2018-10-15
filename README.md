@@ -9,7 +9,7 @@ Raspberry Pi 3 on-board Bluetooth example
 
 This project enables bluetooth and demonstrates some simple commands to interact with a bluetooth device.
 
-To get this project up and running, you will need to signup for a [balena](https://balena.io/) account [here](https://dashboard.balena.io/signup) and set up a Raspberry Pi 3, have a look at our [Getting Started Tutorial](http://docs.balena.io/raspberrypi/nodejs/getting-started/) if you haven't already. Once you are set up with balena, you will need to clone this repo locally:
+To get this project up and running, you will need to signup for a [balena](https://balena.io/) account [here](https://dashboard.balena-cloud.com/signup) and set up a Raspberry Pi 3, have a look at our [Getting Started Tutorial](http://balena.io/docs/learn/getting-started/) if you haven't already. Once you are set up with balena, you will need to clone this repo locally:
 
 ```
 $ git clone https://github.com/balena-projects/rpi3-bluetooth.git
@@ -17,7 +17,7 @@ $ git clone https://github.com/balena-projects/rpi3-bluetooth.git
 Then add your balena application's remote repository to your local repository:
 
 ```
-$ git remote add balena username@git.balena.io:username/myapp.git
+$ git remote add balena username@git.balena-cloud.com:username/myapp.git
 ```
 and push the code to the newly added remote:
 
